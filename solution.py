@@ -29,7 +29,7 @@ if __name__ == "__main__":
         cluster.append([])
     # Divide into CLUSTER clusters
     # Pick CLUSTER vectors on random
-    selected = [vector[5],vector[75], vector[156]]
+    selected = [vector[0],vector[60], vector[131]]
 
     # Assign each vector to the closest cluster
     for i in vector:
@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
 
 
-    EPOCH = 1 
+    EPOCH = 10 
     for T in range(EPOCH):
         # Calculate the mean of each cluster
         mean = []
@@ -78,16 +78,12 @@ if __name__ == "__main__":
                 prediction.append(j+1)
 
     #Calculate the accuracy
+    print(prediction)
     accuracy = 0
     for i in range(len(prediction)):
         if prediction[i] == labels[i]:
             accuracy += 1
     print(accuracy/len(prediction))
-
-    # Calculate the distance between each vector and the cluster
-    # Assign the vector to the cluster with the smallest distance
-    # Repeat until convergence
-    # Print the cluster centroids
 
 
 
